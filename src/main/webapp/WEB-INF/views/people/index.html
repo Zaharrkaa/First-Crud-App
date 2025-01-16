@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>all people</title>
+</head>
+<body>
+    <div style="padding: 10px;" th:each="person: ${people}">
+        <a th:href="@{/people/{id} (id=${person.getId()})}" th:text="${person.getName()} + ', ' + ${person.getAge()}"
+           style="color: blue; text-decoration: none;" onmouseover="this.style.color='red';"
+           onmouseout="this.style.color='blue';">user</a>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <a style="color: blue; text-decoration: none;" onmouseover="this.style.color='red';"
+       onmouseout="this.style.color='blue';" href="/people/new">Create new person</a>
+    <br>
+    <br>
+</body>
+</html>
